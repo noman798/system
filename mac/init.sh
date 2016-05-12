@@ -3,17 +3,16 @@ eval "$(docker-machine env default)"
 
 PREFIX=$(cd "$(dirname "$0")"; pwd)/..
 DOCKER=$PREFIX/docker
-ROOT=/Users/$USER/docker_mnt
-
-mkdir -p $ROOT
 
 $DOCKER/build.sh
 
+ROOT=/Users/$USER/docker_mnt
+mkdir -p $ROOT
 cp -R $PREFIX/home $ROOT
+cp -R $PREFIX/home/dev $ROOT/root 
 
 cd $ROOT
 mkdir -p var/log \
-    root \
     var/lib/redis \
     var/lib/mongodb \
     var/lib/mlocate \
