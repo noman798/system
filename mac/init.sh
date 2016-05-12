@@ -14,6 +14,7 @@ cp -R $PREFIX/home $BASE
 
 cd $ROOT
 mkdir -p var/log \
+    root \
     var/lib/redis \
     var/lib/mongodb \
     var/lib/mlocate \
@@ -21,6 +22,7 @@ mkdir -p var/log \
 docker run -d -v $ROOT:/home/dev \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
+    -v $ROOT/root:/root  \
     -v $ROOT/var/lib/redis:/var/lib/redis \
     -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
