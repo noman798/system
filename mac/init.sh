@@ -3,8 +3,7 @@ eval "$(docker-machine env default)"
 
 PREFIX=$(cd "$(dirname "$0")"; pwd)/..
 DOCKER=$PREFIX/docker
-BASE=/Users/$USER/home
-ROOT=$BASE/.root
+ROOT=/Users/$USER/docker_mnt
 
 mkdir -p $ROOT
 
