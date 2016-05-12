@@ -31,7 +31,6 @@ RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
 RUN add-apt-repository ppa:fkrull/deadsnakes -y && apt-get update
 RUN apt-get dist-upgrade -y
 
-
 # install basic software
 RUN apt-get -y install \
     sudo \
@@ -91,9 +90,7 @@ RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 # install frontend tools
 # RUN cnpm install -g \
 RUN npm install -g \
-        avoscloud-code \
         js2coffee \
-        avoscloud-sdk \
         base-x \
         body-parser \
         clean-css \
