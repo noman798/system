@@ -1,4 +1,5 @@
 PREFIX=$(cd "$(dirname "$0")"; pwd)
+$PREFIX/../docker/build.sh
 
 ROOT=~/dev
 cp -R $PREFIX/home $ROOT 
