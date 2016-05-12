@@ -121,7 +121,8 @@ RUN npm install -g \
         to-markdown \
         underscore \
         underscore.string \
-        rubygems
+        rubygems \
+        python3-markupsafe
 
 # install vim-plugin
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim
@@ -132,12 +133,11 @@ RUN vim +PluginInstall +qall
 #RUN ./install.sh --clang-completer
 
 
+RUN pip install virtualenv trash-cli
 WORKDIR /home/dev
 RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install sass gist 
 
-RUN pip install virtualenv trash-cli
-RUN apt-get install -y python3-markupsafe
 USER dev
 RUN mkdir /home/dev/.hgplugin
 RUN curl https://bitbucket.org/GrahamHelliwell/hg-sync/raw/cdb1d3f0ca68766d775746b02b301547ce3af0df/sync.py > /home/dev/.hgplugin/sync.py
