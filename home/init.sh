@@ -1,6 +1,5 @@
 
-USER dev
-RUN mkdir /home/dev/.hgplugin
+RUN mkdir ~/.hgplugin
 RUN curl https://bitbucket.org/GrahamHelliwell/hg-sync/raw/cdb1d3f0ca68766d775746b02b301547ce3af0df/sync.py > /home/dev/.hgplugin/sync.py
 COPY tmux_default /home/dev/.tmux_default
 COPY coffeelint.json /home/dev/.coffeelint.json
