@@ -42,6 +42,7 @@ RUN apt-get -y install \
     dnsutils \
     unzip \
     build-essential \
+    iputils-ping \
     clang \
     cmake \
     coffeescript \
