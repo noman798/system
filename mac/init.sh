@@ -10,7 +10,6 @@ mkdir -p $ROOT
 
 $DOCKER/build.sh
 
-cp $DOCKER/.bash_aliases $PREFIX/home 
 cp -R $PREFIX/home $BASE
 
 cd $ROOT
