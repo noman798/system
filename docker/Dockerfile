@@ -138,22 +138,6 @@ WORKDIR /home/dev
 RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install sass gist 
 
-USER dev
-RUN mkdir /home/dev/.hgplugin
-RUN curl https://bitbucket.org/GrahamHelliwell/hg-sync/raw/cdb1d3f0ca68766d775746b02b301547ce3af0df/sync.py > /home/dev/.hgplugin/sync.py
-COPY tmux_default /home/dev/.tmux_default
-COPY coffeelint.json /home/dev/.coffeelint.json
-COPY hgrc /home/dev/.hgrc
-COPY hgignore /home/dev/.hgignore
-COPY requirement.txt /home/dev/requirement.txt
-COPY bashrc /home/dev/.bashrc
-
-# python libs
-RUN virtualenv -p /usr/bin/python3.5 /home/dev/.py3env
-RUN ["/bin/bash", "-c", "source ~/.py3env/bin/activate && pip3.5 install -e hg+https://btyh17mxy@bitbucket.org/pypa/wheel#egg=python-whell"]
-RUN /bin/bash -c "source ~/.py3env/bin/activate && pip3.5 install -r /home/dev/requirement.txt"
-RUN git clone https://github.com/wting/autojump.git 
-
 
 USER root
 COPY fix_print.py /usr/lib/python3.5/lib2to3/fixes/fix_print.py
