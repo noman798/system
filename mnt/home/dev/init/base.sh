@@ -11,7 +11,7 @@ git clone https://github.com/wting/autojump.git
 cd autojump
 ./install.py
 source ~/.bashrc
-
+cd ~
 
 
 
