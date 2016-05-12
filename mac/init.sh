@@ -6,10 +6,11 @@ DOCKER=$PREFIX/docker
 
 $DOCKER/build.sh
 
-ROOT=/Users/$USER/docker_mnt
+ROOT=/Users/$USER/mnt
+
 mkdir -p $ROOT
-cp -R $PREFIX/home $ROOT
-cp -R $PREFIX/home/dev $ROOT/root 
+cp -R $PREFIX/mnt $ROOT
+cp -R $ROOT/root $ROOT/home/dev
 
 cd $ROOT
 mkdir -p var/log \
