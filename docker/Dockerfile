@@ -120,11 +120,12 @@ RUN npm install -g \
         rootpath \
         to-markdown \
         underscore \
-        underscore.string
+        underscore.string \
+        rubygems
 
 # install vim-plugin
-COPY vimrc /etc/vim/vimrc.local 
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim
+COPY vimrc /etc/vim/vimrc.local 
 RUN vim +PluginInstall +qall
 #ENV YCM_DIR /usr/share/vim/vimfiles/bundle/YouCompleteMe
 #WORKDIR $YCM_DIR
@@ -132,7 +133,6 @@ RUN vim +PluginInstall +qall
 
 
 WORKDIR /home/dev
-RUN apt-get install -y rubygems
 RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install sass gist 
 
