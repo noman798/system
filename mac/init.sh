@@ -10,7 +10,7 @@ ROOT=/Users/$USER/mnt
 
 mkdir -p $ROOT
 cp -R $PREFIX/mnt $ROOT
-cp -R $ROOT/root $ROOT/home/dev
+rsync -avC $ROOT/root $ROOT/home/dev
 
 cd $ROOT
 mkdir -p var/log \
