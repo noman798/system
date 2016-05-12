@@ -90,11 +90,6 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-alias rm="trash-put"
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -121,5 +116,10 @@ if ! shopt -oq posix; then
 fi
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 export TERM='xterm-256color'
-~/.tmux_default > /dev/null 2>&1
+
 [[ -s /home/dev/.autojump/etc/profile.d/autojump.sh ]] && source /home/dev/.autojump/etc/profile.d/autojump.sh
+
+if [ -f ~/.tmux_default ]; then
+~/.tmux_default > /dev/null 2>&1
+if
+
