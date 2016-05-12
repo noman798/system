@@ -6,7 +6,7 @@ merge = internal:merge
 editor = vim
 
 verbose = True
-ssh = ssh -i ~/.ssh/id2 -C
+ssh = ssh -i ~/.ssh/id_rsa -C
 ignore = ~/.hgignore
 
 [merge-tools]
