@@ -35,6 +35,7 @@ RUN apt-get dist-upgrade -y
 RUN apt-get -y install \
     sudo \
     rsyslog \
+    resolvconf \
     libzbar-dev \
     nmap \
     doxygen \
@@ -123,6 +124,8 @@ RUN npm install -g \
         underscore.string \
         rubygems \
         python3-markupsafe
+
+COPY resolv.conf /etc/resolvconf/resolv.conf.d/base
 
 # install vim-plugin
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim
