@@ -6,7 +6,7 @@ DOCKER=$PREFIX/docker
 
 $DOCKER/build.sh
 
-ROOT=/Users/$USER/mnt
+ROOT=/Users/$USER/docker
 
 mkdir -p $ROOT
 cp -R $PREFIX/mnt $ROOT
