@@ -18,8 +18,6 @@ RUN chmod ugo+x /usr/bin/*
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 COPY resolv.conf /etc/resolv.conf
-RUN echo "deb http://repo.mongodb.org/apt/ubuntu trusty/mongodb-org/3.0 multiverse" > /etc/apt/sources.list.d/mongodb-org.list
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 
 # update
 RUN apt-get update
