@@ -3,7 +3,7 @@ eval "$(docker-machine env default)"
 
 PREFIX=$(cd "$(dirname "$0")"; pwd)/..
 DOCKER=$PREFIX/docker
-BASE=/Users/$USER/dev
+BASE=/Users/$USER/home
 ROOT=$BASE/.root
 
 mkdir -p $ROOT
@@ -19,7 +19,7 @@ mkdir -p var/log \
     var/lib/mongodb \
     var/lib/mlocate \
     tmp
-docker run -d -v $ROOT:/home/dev \
+docker run -d -v $BASE:/home/ \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
     -v $ROOT/root:/root  \
