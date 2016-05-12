@@ -11,8 +11,8 @@ RUN echo "dev:TZworld" | chpasswd
 # chinese language package
 RUN locale-gen zh_CN.UTF-8
 
-COPY deltmp.py /usr/bin/deltmp
-RUN chmod ugo+x /usr/bin/deltmp
+COPY bin/* /usr/bin/
+RUN chmod ugo+x /usr/bin/*
 
 # change timezone 
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
