@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 
 # setting up ssh
 RUN mkdir -p /var/run/sshd
-RUN useradd dev -m -p idatadev -s /bin/bash
+RUN useradd dev -m -p TZworld -s /bin/bash
 RUN echo "dev:TZworld" | chpasswd
 
 # chinese language package
