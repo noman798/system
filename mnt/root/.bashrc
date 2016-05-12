@@ -108,6 +108,6 @@ export TERM='xterm-256color'
 [[ -s /home/dev/.autojump/etc/profile.d/autojump.sh ]] && source /home/dev/.autojump/etc/profile.d/autojump.sh
 
 if [ -f ~/.tmux_default ]; then
-~/.tmux_default > /dev/null 2>&1
+    ~/.tmux_default > /dev/null 2>&1 
 if
 
