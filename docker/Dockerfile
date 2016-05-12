@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -18,7 +18,6 @@ RUN chmod ugo+x /usr/bin/*
 RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 COPY resolv.conf /etc/resolv.conf
-COPY .bash_aliases /root
 
 # update
 RUN apt-get update

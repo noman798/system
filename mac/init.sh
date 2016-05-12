@@ -1,3 +1,7 @@
+brew install docker docker-compose docker-machine
+brew cask install virtualbox
+brew install bash-completion
+
 docker-machine start
 eval "$(docker-machine env default)"
 
@@ -19,14 +23,14 @@ mkdir -p var/log \
 
 
 DOCKER=$PREFIX/docker
-# $DOCKER/build.sh
-# docker run -d -v $BASE:/home/ \
-#     -v $ROOT/var/log:/var/log \
-#     -v $ROOT/tmp:/tmp  \
-#     -v $ROOT/root:/root  \
-#     -v $ROOT/var/lib/redis:/var/lib/redis \
-#     -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
-#     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
-#     --name dev \
-#     -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 80:80 443:443 \
-#     tz/world
+$DOCKER/build.sh
+docker run -d -v $BASE:/home/ \
+    -v $ROOT/var/log:/var/log \
+    -v $ROOT/tmp:/tmp  \
+    -v $ROOT/root:/root  \
+    -v $ROOT/var/lib/redis:/var/lib/redis \
+    -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
+    -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
+    --name dev \
+    -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 80:80 443:443 \
+    tz/world
