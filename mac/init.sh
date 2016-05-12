@@ -1,14 +1,18 @@
 docker-machine start
 eval "$(docker-machine env default)"
 
-PREFIX=$(cd "$(dirname "$0")"; pwd)
-$PREFIX/../docker/build.sh
-
+PREFIX=$(cd "$(dirname "$0")"; pwd)/..
+DOCKER=$PREFIX/docker
 BASE=/Users/$USER/dev
+ROOT=$BASE/.root
+
+mkdir -p $ROOT
+
+$DOCKER/build.sh
+
+cp $DOCKER/.bash_aliases $PREFIX/home 
 cp -R $PREFIX/home $BASE
 
-ROOT=$BASE/.root
-mkdir -p $ROOT
 cd $ROOT
 mkdir -p var/log \
     var/lib/redis \
