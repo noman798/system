@@ -9,7 +9,7 @@ mkdir -p $ROOT
 
 $DOCKER/build.sh
 
-cp -R $PREFIX/home $BASE
+cp -R $PREFIX/home $ROOT
 
 cd $ROOT
 mkdir -p var/log \
