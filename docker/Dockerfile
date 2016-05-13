@@ -34,6 +34,7 @@ RUN apt-get dist-upgrade -y
 # install basic software
 RUN apt-get -y install \
     sudo \
+    bash-completion \
     rsyslog \
     resolvconf \
     libzbar-dev \

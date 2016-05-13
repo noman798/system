@@ -19,6 +19,7 @@ mkdir -p var/log \
     var/lib/redis \
     var/lib/mongodb \
     var/lib/mlocate \
+    data \
     tmp
 
 
@@ -31,6 +32,7 @@ docker run -d -v $BASE:/home/ \
     -v $ROOT/var/lib/redis:/var/lib/redis \
     -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
+    -v $ROOT/data:/data \
     --name dev \
     -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 80:80 443:443 \
     tz/world
