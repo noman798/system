@@ -19,7 +19,10 @@ RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 COPY resolv.conf /etc/resolv.conf
 
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+
 # update
+RUN sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list
 RUN apt-get update
 RUN set -x \
         && apt-get install -y \
@@ -36,7 +39,6 @@ RUN apt-get -y install \
     sudo \
     bash-completion \
     rsyslog \
-    resolvconf \
     libzbar-dev \
     nmap \
     doxygen \
@@ -127,7 +129,7 @@ RUN npm install -g \
         rubygems \
         python3-markupsafe
 
-COPY resolv.conf /etc/resolvconf/resolv.conf.d/base
+
 
 # install vim-plugin
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim
