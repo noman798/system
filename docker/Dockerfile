@@ -8,6 +8,7 @@ RUN mkdir -p /var/run/sshd
 RUN useradd dev -m -p TZworld -s /bin/bash
 RUN echo "dev:TZworld" | chpasswd
 
+RUN mkdir -p /home/dev
 # chinese language package
 RUN locale-gen zh_CN.UTF-8
 
