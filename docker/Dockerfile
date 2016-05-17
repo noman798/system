@@ -80,6 +80,7 @@ RUN apt-get -y install \
     redis-server \
     rpl \
     rubygems-integration \
+    rubygems \
     silversearcher-ag \
     tmux \
     tree \
