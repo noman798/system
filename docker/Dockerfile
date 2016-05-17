@@ -126,8 +126,7 @@ RUN npm install -g \
         to-markdown \
         underscore \
         underscore.string \
-        rubygems \
-        python3-markupsafe
+        rubygems
 
 
 

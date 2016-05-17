@@ -63,8 +63,8 @@ if filereadable("/home/web/.vim/bundle/google_yapf.vim/yapf.vim")
 endif
 
 autocmd FileType python set commentstring=#\ %s
-autocmd FileType html set commentstring=##\ %s
-autocmd FileType coffee set commentstring=##\ %s
+autocmd FileType html set commentstring=#\ %s
+autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType sh set commentstring=#\ %s
 
 """""""""""""""""""""""""""""""""""""""
