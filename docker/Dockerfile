@@ -18,7 +18,7 @@ RUN \
     echo "dev:TZworld" | chpasswd;\
     mkdir -p /home/dev;chown dev:dev /home/dev;\
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;\
-    sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list;\
+    sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.ustc\.edu\.cn\/ubuntu\//g' /etc/apt/sources.list;\
     apt-get update;\
     set -x \
         && apt-get install -y \
