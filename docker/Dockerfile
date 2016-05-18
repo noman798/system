@@ -28,7 +28,7 @@ RUN \
         curl; \
     curl --silent --location https://deb.nodesource.com/setup_4.x | bash - ;\
     add-apt-repository ppa:fkrull/deadsnakes -y ; \
-    apt-get update ; apt-get dist-upgrade -y;\
+    apt-get update ; apt-get dist-upgrade -y;
 
 # install basic software
 RUN apt-get -y install \
