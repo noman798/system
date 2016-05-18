@@ -1,7 +1,7 @@
 brew install docker docker-compose docker-machine
 brew cask install virtualbox
 brew install bash-completion
-
+docker-machine create
 docker-machine start
 eval "$(docker-machine env default)"
 
