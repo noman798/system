@@ -1,7 +1,8 @@
 brew install xhyve docker docker-machine docker-compose ssh-copy-id 
 brew link --overwrite docker-machine
 brew install docker-machine-driver-xhyve
-echo "\n请输入 sudo 密码"
+echo ""
+echo "请输入 sudo 密码"
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 
