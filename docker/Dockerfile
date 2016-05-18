@@ -29,9 +29,8 @@ RUN \
     apt-get dist-upgrade -y
 
 RUN apt-get clean;\
-apt-get update --fix-missing; \
-# install basic software
-RUN apt-get -y install \
+    apt-get update --fix-missing; \
+    apt-get -y install \
     sudo \
     bash-completion \
     rsyslog \
