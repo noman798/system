@@ -1,6 +1,11 @@
-brew install docker docker-compose docker-machine
-brew cask install virtualbox
-brew install bash-completion
+brew install xhyve docker docker-machine docker-compose 
+brew link --overwrite docker-machine
+brew install docker-machine-driver-xhyve
+
+sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
+docker-machine create default --driver xhyve
+
 docker-machine create
 docker-machine start
 eval "$(docker-machine env default)"
