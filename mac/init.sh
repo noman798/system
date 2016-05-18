@@ -34,7 +34,7 @@ mkdir -p var/log \
 
 
 echo "Try docker run ..."
-docker run -d -v $ROOT/home:/home/ \
+docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
     -v $ROOT/root:/root  \
