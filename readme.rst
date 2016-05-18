@@ -1,4 +1,5 @@
 
+国内先用迅雷下载 https://github.com/boot2docker/boot2docker/releases/download/v1.11.1/boot2docker.iso 放到 /Users/$USER/.docker/machine/cache/boot2docker.iso
 
 ## 初始化 Docker 环境
 ### Mac 用户
