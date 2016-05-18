@@ -4,5 +4,7 @@
 
 PREFIX=$(cd "$(dirname "$0")"; pwd)
 
-brew install `cat $PREFIX//brew-backup/soft-brew.txt`
-brew cask install `cat ~/brew-backup/soft-brew-cask.txt`
+brew install `cat $PREFIX//brew/bak/soft-brew.txt`
+brew cask install `cat $PREFIX/brew/bak/soft-brew-cask.txt`
+
+$PREFIX/docker/init.sh
