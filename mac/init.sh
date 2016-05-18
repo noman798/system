@@ -8,6 +8,11 @@ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machi
 docker-machine create default --driver xhyve
 docker-machine start
 
+
+DOCKER=$PREFIX/docker
+$DOCKER/build.sh
+echo "BUILDED !!!"
+
 eval "$(docker-machine env default)"
 
 PREFIX=$(cd "$(dirname "$0")"; pwd)/..
@@ -28,9 +33,6 @@ mkdir -p var/log \
     tmp
 
 
-DOCKER=$PREFIX/docker
-$DOCKER/build.sh
-echo "BUILDED !!!"
 echo "Try docker run ..."
 docker run -d -v $ROOT/home:/home/ \
     -v $ROOT/var/log:/var/log \
