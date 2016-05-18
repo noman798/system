@@ -29,7 +29,7 @@ RUN \
     add-apt-repository ppa:fkrull/deadsnakes -y ; \
     apt-get clean;\
     apt-get update --fix-missing; \
-    apt-get dist-upgrade -y;\
+    apt-get dist-upgrade -y;
 
 # install basic software
 RUN apt-get -y install \
