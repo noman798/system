@@ -25,6 +25,7 @@ ROOT=/Users/$USER/docker
 mkdir -p $ROOT
 rsync -avC $PREFIX/mnt/ $ROOT/
 rsync -avC $ROOT/root/ $ROOT/home/dev/
+chown -R 1000 $ROOT
 
 cd $ROOT
 mkdir -p var/log \
