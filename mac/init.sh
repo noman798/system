@@ -8,14 +8,14 @@ sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machi
 docker-machine create default --driver xhyve
 docker-machine start
 
+eval "$(docker-machine env default)"
 
+PREFIX=$(cd "$(dirname "$0")"; pwd)/..
 DOCKER=$PREFIX/docker
 $DOCKER/build.sh
 echo "BUILDED !!!"
 
-eval "$(docker-machine env default)"
 
-PREFIX=$(cd "$(dirname "$0")"; pwd)/..
 
 
 ROOT=/Users/$USER/docker
