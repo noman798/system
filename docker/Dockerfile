@@ -21,16 +21,14 @@ RUN \
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10;\
     sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list;\
     apt-get clean;\
-    apt-get update --fix-missing
-RUN set -x \
+    apt-get update;\
+    set -x \
         && apt-get install -y \
         software-properties-common \
-        curl
-
-        
-RUN curl --silent --location https://deb.nodesource.com/setup_4.x | bash -
-RUN add-apt-repository ppa:fkrull/deadsnakes -y && apt-get update
-RUN apt-get dist-upgrade -y
+        curl; \
+    curl --silent --location https://deb.nodesource.com/setup_4.x | bash - ;\
+    add-apt-repository ppa:fkrull/deadsnakes -y ; \
+    apt-get update ; apt-get dist-upgrade -y;\
 
 # install basic software
 RUN apt-get -y install \
