@@ -1,4 +1,5 @@
-
+echo "请输入 sudo 密码 ( 防止稍后需要输入密码 )"
+sudo ls 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 
