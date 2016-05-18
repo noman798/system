@@ -1,11 +1,11 @@
-brew install xhyve docker docker-machine docker-compose 
+brew install xhyve docker docker-machine docker-compose ssh-copy-id 
 brew link --overwrite docker-machine
 brew install docker-machine-driver-xhyve
 
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 
-docker-machine create default --driver xhyve
+docker-machine create default --driver xhyve --xhyve-experimental-nfs-share
 docker-machine start
 
 eval "$(docker-machine env default)"
@@ -45,3 +45,11 @@ docker run -d -v $ROOT/home:/home \
     --name tz \
     -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 -p 80:80 -p 443:443 \
     tz/world
+
+
+IP=`docker-machine ip`
+echo "DOCKER IP = "$IP
+echo ""
+echo "请输入密码 TZworld"
+echo ""
+ssh-copy-id -p20000 dev@$IP
