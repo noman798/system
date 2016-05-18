@@ -25,7 +25,9 @@ mkdir -p var/log \
 
 DOCKER=$PREFIX/docker
 $DOCKER/build.sh
-docker run -d -v $BASE:/home/ \
+echo "BUILDED !!!"
+echo "Try docker run ..."
+docker run -d -v $ROOT/home:/home/ \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
     -v $ROOT/root:/root  \
@@ -34,5 +36,5 @@ docker run -d -v $BASE:/home/ \
     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
     -v $ROOT/data:/data \
     --name dev \
-    -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 80:80 443:443 \
+    -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 -p 80:80 -p 443:443 \
     tz/world
