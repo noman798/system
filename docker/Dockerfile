@@ -3,28 +3,25 @@ FROM ubuntu:xenial
 ENV DEBIAN_FRONTEND noninteractive
 
 
-# setting up ssh
-RUN mkdir -p /var/run/sshd
-RUN useradd dev -m -p TZworld -s /bin/bash
-RUN echo "dev:TZworld" | chpasswd
-
-RUN mkdir -p /home/dev
-# chinese language package
-RUN locale-gen zh_CN.UTF-8
 
 COPY bin/* /usr/bin/
-RUN chmod ugo+x /usr/bin/*
 
 # change timezone 
-RUN cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 COPY resolv.conf /etc/resolv.conf
 
-RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
-
-# update
-RUN sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list
-RUN apt-get update
+RUN \
+    mkdir -p /var/run/sshd;\
+    locale-gen zh_CN.UTF-8;\
+    chmod ugo+x /usr/bin/*;\
+    useradd dev -m -p TZworld -s /bin/bash;\
+    echo "dev:TZworld" | chpasswd;\
+    mkdir -p /home/dev;chown dev:dev /home/dev;\
+    cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;\
+    apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10;\
+    sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list;\
+    apt-get clean;\
+    apt-get update --fix-missing
 RUN set -x \
         && apt-get install -y \
         software-properties-common \
