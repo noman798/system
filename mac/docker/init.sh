@@ -1,3 +1,4 @@
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew install xhyve docker docker-machine docker-compose ssh-copy-id 
 brew link --overwrite docker-machine
 brew install docker-machine-driver-xhyve
