@@ -5,7 +5,8 @@ brew install docker-machine-driver-xhyve
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 
-docker-machine create default --driver xhyve --xhyve-experimental-nfs-share
+export XHYVE_EXPERIMENTAL_NFS_SHARE=1
+docker-machine create default --driver xhyve 
 docker-machine start
 
 eval "$(docker-machine env default)"
