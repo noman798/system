@@ -1,0 +1,8 @@
+daisydisk
+filezilla
+google-chrome
+iterm2
+mongochef
+opera-developer
+virtualbox
+vlc
