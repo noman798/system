@@ -20,7 +20,6 @@ RUN \
     cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime;\
     apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10;\
     sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list;\
-    apt-get clean;\
     apt-get update;\
     set -x \
         && apt-get install -y \
@@ -28,7 +27,9 @@ RUN \
         curl; \
     curl --silent --location https://deb.nodesource.com/setup_4.x | bash - ;\
     add-apt-repository ppa:fkrull/deadsnakes -y ; \
-    apt-get update ; apt-get dist-upgrade -y;
+    apt-get clean;\
+    apt-get update --fix-missing; \
+    apt-get dist-upgrade -y;\
 
 # install basic software
 RUN apt-get -y install \

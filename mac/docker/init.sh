@@ -6,13 +6,22 @@ echo "请输入 sudo 密码"
 sudo chown root:wheel $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 sudo chmod u+s $(brew --prefix)/opt/docker-machine-driver-xhyve/bin/docker-machine-driver-xhyve
 
+
+ROOT=/Users/$USER/docker
+PREFIX=$(cd "$(dirname "$0")"; pwd)/../..
+
+mkdir -p $ROOT
+rsync -avC $PREFIX/mnt/ $ROOT/
+rsync -avC $ROOT/root/ $ROOT/home/dev/
+sudo chown -R 1000 $ROOT
+
+
 export XHYVE_EXPERIMENTAL_NFS_SHARE=1
 docker-machine create default --driver xhyve 
 docker-machine start
 
 eval "$(docker-machine env default)"
 
-PREFIX=$(cd "$(dirname "$0")"; pwd)/../..
 DOCKER=$PREFIX/docker
 $DOCKER/build.sh
 echo "BUILDED !!!"
@@ -20,12 +29,6 @@ echo "BUILDED !!!"
 
 
 
-ROOT=/Users/$USER/docker
-
-mkdir -p $ROOT
-rsync -avC $PREFIX/mnt/ $ROOT/
-rsync -avC $ROOT/root/ $ROOT/home/dev/
-chown -R 1000 $ROOT
 
 cd $ROOT
 mkdir -p var/log \
