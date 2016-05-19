@@ -12,5 +12,6 @@
 # By default this script does nothing.
 rsyslogd
 cron
+supervisord
 /usr/sbin/sshd -f /etc/ssh/sshd_config -D
 exit 0
