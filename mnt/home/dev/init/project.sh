@@ -22,3 +22,4 @@ hg clone ssh://hg@bitbucket.org/vcwatch/system
 hg clone ssh://hg@bitbucket.org/noman798/room
 
 grep "PYTHONPATH=/home/dev/tz/code/py" ~/.bashrc ||echo "export PYTHONPATH=/home/dev/tz/code/py:\$PYTHONPATH" >>  ~/.bashrc
+source ~/.bashrc
