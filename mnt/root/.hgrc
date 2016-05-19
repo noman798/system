@@ -15,6 +15,7 @@ vimdiff.executable = vim
 vimdiff.args = -d $base $local $output $other +close +close
 
 [extensions]
+hggit = 
 hgext.purge=
 color=
 hgext.fetch=

@@ -135,7 +135,7 @@ RUN vim +PluginInstall +qall
 #RUN ./install.sh --clang-completer
 
 
-RUN pip install virtualenv trash-cli
+RUN pip install --upgrade pip virtualenv trash-cli hg-git
 WORKDIR /home/dev
 RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
 RUN gem install sass gist 
