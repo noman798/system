@@ -14,4 +14,5 @@ source ~/.bashrc
 cd ~
 
 
-
+chmod -R go-rwx /tmp/* /tmp/.[!.]*
+chmod 1777 /tmp
