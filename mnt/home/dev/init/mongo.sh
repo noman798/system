@@ -6,5 +6,7 @@ sudo apt-get update
 sudo apt-get install -y --allow-unauthenticated mongodb-org
 sudo rm /etc/mongod.conf
 sudo ln -s $PREFIX/config/mongod.conf /etc/
-sudo ln -s supervisord/mongod.conf /etc/supervisor/conf.d/
-sudo supervisorctl  restart all
+#sudo rm /etc/supervisor/conf.d/mongod.conf
+sudo ln -s $PREFIX/supervisord/mongod.conf /etc/supervisor/conf.d/
+sudo supervisorctl reload 
+sudo supervisorctl restart all
