@@ -5,3 +5,5 @@
 
 mongo admin --port 20100 --eval 'db.createUser( { user: "root", pwd: "ce9tLyQdAMhtutBJ", roles: [ { role: "userAdminAnyDatabase", db: "admin" } ] })' 
 mongo tzdev --port 20100 --eval 'db.createUser({ user: "dev", pwd: "JOlSVJvKCzxvDAwV", roles: [ { role: "readWrite", db: "tzdev" } ] });' 
+mongo admin --port 20100 --eval 'db.createUser({ user: "dev", pwd: "JOlSVJvKCzxvDAwV", roles: [ { role: "root", db: "admin" } ] });' 
+mongo admin --port 20100 --eval 'db.createUser({ user: "dev", pwd: "JOlSVJvKCzxvDAwV", roles: [ { role: "root", db: "tzdev" } ] });' 
