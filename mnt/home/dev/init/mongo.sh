@@ -7,6 +7,4 @@ sudo apt-get install -y --allow-unauthenticated mongodb-org
 sudo rm /etc/mongod.conf
 sudo ln -s $PREFIX/config/mongod.conf /etc/
 
-grep "mongodb " /etc/rc.local||sed "$i sudo -u mongodb /usr/bin/mongod  --config /etc/mongod.conf --fork" /etc/rc.local 
-sudo -u mongodb /usr/bin/mongod  --config /etc/mongod.conf --fork
 
