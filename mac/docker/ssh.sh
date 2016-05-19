@@ -1,6 +1,6 @@
 docker-machine start
 eval "$(docker-machine env default)"
-docker start dev
+docker start tz
 
 IP=`docker-machine ip`
 echo "DOCKER IP = "$IP

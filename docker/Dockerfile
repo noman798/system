@@ -56,6 +56,7 @@ RUN apt-get clean;\
     libssl-dev \
     libpcre3-dev \
     libreadline-dev \
+    supervisor \
     libjpeg-dev \
     libjpeg8-dev \
     libssl-dev \
