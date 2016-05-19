@@ -10,3 +10,4 @@ sudo ln -s $PREFIX/config/mongod.conf /etc/
 sudo ln -s $PREFIX/supervisord/mongod.conf /etc/supervisor/conf.d/
 sudo supervisorctl reload 
 sudo supervisorctl restart all
+
