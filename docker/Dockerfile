@@ -72,7 +72,6 @@ RUN apt-get clean;\
     python-pip \
     python3.5 \
     python3.5-dev \
-    redis-server \
     rpl \
     rubygems-integration \
     rubygems \
