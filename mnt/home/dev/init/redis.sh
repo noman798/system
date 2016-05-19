@@ -13,3 +13,7 @@ cd $PREFIX
 sudo useradd redis
 mkdir -p /etc/redis
 sudo cp $PREFIX/config/redis*.conf /etc/redis
+
+sudo ln -s $PREFIX/supervisord/redis.conf /etc/supervisor/conf.d/
+sudo supervisorctl reload 
+sudo supervisorctl restart all
