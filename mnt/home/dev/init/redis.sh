@@ -11,6 +11,7 @@ cd $PREFIX
 # rm -rf redis-stable
 
 sudo useradd redis
+sudo chown redis /var/lib/redis/
 mkdir -p /etc/redis
 sudo cp $PREFIX/config/redis*.conf /etc/redis
 
