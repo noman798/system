@@ -10,5 +10,6 @@ cd $PREFIX
 # cd $PREFIX
 # rm -rf redis-stable
 
+sudo useradd redis
 mkdir -p /etc/redis
 sudo cp $PREFIX/config/redis*.conf /etc/redis
