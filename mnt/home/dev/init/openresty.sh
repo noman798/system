@@ -7,7 +7,7 @@ rm openresty.zip
 cd openresty-*/
 make try-luajit
 cd openresty-*/
-./configure
+./configure --with-luajit
 make && sudo make install
 
 # cd redis-stable
