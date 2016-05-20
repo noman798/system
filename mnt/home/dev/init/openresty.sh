@@ -5,14 +5,14 @@ cd /tmp
 rm openresty.zip
 rm -rf openresty-*
 
-# wget `curl -s https://api.github.com/repos/openresty/openresty/tags | grep zipball_url | head -n 1 | cut -d '"' -f 4` -O openresty.zip -c
-# unzip openresty.zip
-# rm openresty.zip
-# cd openresty-*/
-# make try-luajit
-# cd openresty-*/
-# ./configure --with-luajit --with-http_iconv_module
-# make && sudo make install
+wget `curl -s https://api.github.com/repos/openresty/openresty/tags | grep zipball_url | head -n 1 | cut -d '"' -f 4` -O openresty.zip -c
+unzip openresty.zip
+rm openresty.zip
+cd openresty-*/
+make try-luajit
+cd openresty-*/
+./configure --with-luajit --with-http_iconv_module
+make && sudo make install
 
 sudo useradd nginx
 sudo mkdir -p /var/log/nginx /etc/nginx/conf.d/
