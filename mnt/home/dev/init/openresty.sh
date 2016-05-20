@@ -10,9 +10,8 @@ cd openresty-*/
 ./configure --with-luajit
 make && sudo make install
 
-# cd redis-stable
-# make
-# sudo make install
-# cd $PREFIX
-# rm -rf redis-stable
+
+cd $PREFIX
+rm -rf openresty-
+
 
