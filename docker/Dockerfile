@@ -32,6 +32,7 @@ RUN apt-get clean;\
     apt-get update --fix-missing; \
     apt-get -y install \
     sudo \
+    dos2unix \
     bash-completion \
     rsyslog \
     libzbar-dev \
