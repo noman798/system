@@ -2,7 +2,6 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-source ~/.py3env/bin/activate
 
 # If not running interactively, don't do anything
 case $- in
@@ -106,6 +105,10 @@ PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1
 export TERM='xterm-256color'
 
 [[ -s /home/dev/.autojump/etc/profile.d/autojump.sh ]] && source /home/dev/.autojump/etc/profile.d/autojump.sh
+
+if [ -f ~/.py3env/bin/activate ]; then
+    source ~/.py3env/bin/activate
+fi
 
 if [ -f ~/.tmux_default ]; then
     ~/.tmux_default > /dev/null 2>&1 
