@@ -11,7 +11,7 @@ rm -rf openresty-*
 # cd openresty-*/
 # make try-luajit
 # cd openresty-*/
-# ./configure --with-luajit
+# ./configure --with-luajit --with-http_iconv_module
 # make && sudo make install
 
 sudo useradd nginx
