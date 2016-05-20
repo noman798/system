@@ -1,10 +1,3 @@
-"""""""""""""""""""""""""""""""""""""""
-"
-"   by: btyh17mxy@gmail.com(Mush)
-"   web site: mushapi.com
-"
-"""""""""""""""""""""""""""""""""""""""
-
 
 """""""""""""""""""""""""""""""""""""""
 "
@@ -20,7 +13,7 @@ set rtp+=/usr/share/vim/vimfiles/bundle/Vundle.vim
 call vundle#rc('/usr/share/vim/vimfiles/bundle')
 
 Plugin 'gmarik/Vundle.vim'                  "插件管理
-Plugin 'yegappan/mru'                       "文件跳转
+Plugin 'yegappan/mru'                       "最近打开过的文件
 Plugin 'kchmck/vim-coffee-script'           "Coffee-script语法高亮
 Plugin 'vim-scripts/mako.vim'               "mako语法高亮
 Plugin 'scrooloose/syntastic'               "语法检查
