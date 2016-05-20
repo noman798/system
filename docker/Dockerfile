@@ -66,6 +66,8 @@ RUN apt-get clean;\
     mercurial \
     mlocate \
     nodejs \
+    opencc \
+    libopencc-dev \
     openssh-client \
     openssh-server \
     perl \
