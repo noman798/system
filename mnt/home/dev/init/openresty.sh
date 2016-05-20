@@ -16,3 +16,6 @@ cd $PREFIX
 rm -rf openresty-
 
 
+sudo ln -s $PREFIX/supervisord/nginx.conf /etc/supervisor/conf.d/
+sudo supervisorctl reload 
+sudo supervisorctl restart nginx 
