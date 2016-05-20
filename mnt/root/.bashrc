@@ -104,11 +104,11 @@ fi
 PS1='\[\e[0;32m\]\u\[\e[m\] \[\e[1;34m\]\w\[\e[m\] \[\e[1;32m\]\$\[\e[m\] \[\e[1;37m\]'
 export TERM='xterm-256color'
 
-[[ -s /home/dev/.autojump/etc/profile.d/autojump.sh ]] && source /home/dev/.autojump/etc/profile.d/autojump.sh
-
 if [ -f ~/.py3env/bin/activate ]; then
     source ~/.py3env/bin/activate
 fi
+
+[[ -s /home/dev/.autojump/etc/profile.d/autojump.sh ]] && source /home/dev/.autojump/etc/profile.d/autojump.sh
 
 if [ -f ~/.tmux_default ]; then
     ~/.tmux_default > /dev/null 2>&1 
