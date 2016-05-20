@@ -15,6 +15,13 @@ make && sudo make install
 sudo useradd nginx
 
 
+sudo mkdir -p /var/log/nginx /etc/nginx/conf.d/
+sudo chown -R nginx:nginx /var/log/nginx /etc/nginx
+
+cp $PREFIX/config/nginx.conf /etc/nginx/
+rm /usr/local/openresty/nginx/conf/nginx.conf
+ln -s /etc/nginx/nginx.conf /usr/local/openresty/nginx/conf/nginx.conf
+
 cd $PREFIX
 rm -rf openresty-
 
