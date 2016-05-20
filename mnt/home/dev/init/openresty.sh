@@ -5,7 +5,10 @@ wget `curl -s https://api.github.com/repos/openresty/openresty/tags | grep zipba
 unzip openresty.zip
 rm openresty.zip
 cd openresty-*/
-make
+make try-luajit
+cd openresty-*/
+./configure
+make && sudo make install
 
 # cd redis-stable
 # make
