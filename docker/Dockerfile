@@ -108,6 +108,7 @@ RUN npm install -g \
         escape-html \
         express \
         fis3 \
+        fis3-postprocessor-autoprefixer \
         fis3-postpackager-loader \
         fis3-hook-commonjs \
         hiredis \
