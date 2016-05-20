@@ -33,6 +33,7 @@ RUN apt-get clean;\
     apt-get -y install \
     sudo \
     dos2unix \
+    liblz4-tool \
     bash-completion \
     rsyslog \
     libzbar-dev \

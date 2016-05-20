@@ -278,12 +278,15 @@ let g:solarized_underline=1
 let g:solarized_contrast="high"
 set background=dark
 colorscheme solarized
+highlight Function ctermfg=184 ctermbg=0
 highlight NonText ctermfg=232 ctermbg=0
 highlight LineNr ctermfg=58 ctermbg=black
 highlight SignColumn ctermfg=white ctermbg=black
 highlight Comment ctermfg=248 ctermbg=black
-highlight Normal ctermfg=253 ctermbg=black
-highlight String ctermfg=112 ctermbg=black
+highlight Normal ctermfg=157 ctermbg=black
+highlight String ctermfg=227 ctermbg=black
+
+
 "set cursorline                         "光标所在行高亮
 let g:rainbow_active = 1    "彩虹括号
 
