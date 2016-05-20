@@ -44,7 +44,7 @@ Plugin 'godlygeek/tabular'                  "自动对齐
 Plugin 'tpope/vim-commentary'               "批量注释 
 Plugin 'hynek/vim-python-pep8-indent'       "python自动缩进
 " Plugin 'terryma/vim-multiple-cursors'       "多光标选择
-Plugin 'edkolev/tmuxline.vim'               "Airline支持tmux
+" Plugin 'edkolev/tmuxline.vim'               "Airline支持tmux
 " Plugin 'chrisbra/csv.vim'                   "CSV文件插件
 " Plugin 'Valloric/YouCompleteMe'             "自动补全
 Plugin 'wavded/vim-stylus'                  "plim
