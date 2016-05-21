@@ -22,7 +22,7 @@ DEL_LIST = [
 
 def write_able(name):
     path = join(root, name)
-    chmod(path, stat.S_IWRITE)
+    chmod(path, os.stat(path).st_model | stat.S_IWRITE)
     return path
 
 
