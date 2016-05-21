@@ -35,12 +35,12 @@ def del_dir(dir):
 
         for name in files:
             try:
-                remove(name)
+                remove(join(root, name))
             except:
                 traceback.print_exc()
         for name in dirs:
             try:
-                rmdir(write_able(name))
+                rmdir(write_able(join(root, name)))
             except:
                 traceback.print_exc()
     rmdir(dir)
