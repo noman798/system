@@ -31,6 +31,7 @@ RUN \
 RUN apt-get clean;\
     apt-get update --fix-missing; \
     apt-get -y install \
+    realpath \
     sudo \
     dos2unix \
     liblz4-tool \
