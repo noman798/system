@@ -6,7 +6,7 @@ case $- in
       *) return;;
 esac
 
-
+export EDITOR="/usr/bin/vim"
 export LC_CTYPE=zh_CN.UTF-8 # 可以輸入UTF-8中文
 export LC_MESSAGES=zh_CN.UTF-8 # 可以顯示UTF-8中文
 
