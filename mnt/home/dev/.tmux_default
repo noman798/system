@@ -9,16 +9,14 @@ fi
 $cmd has -t $session 2> /dev/null
 
 if [ $? != 0 ]; then
-    $cmd new -d -n tz -s $session "cd ~/tz/code;bash"
-
-    $cmd splitw -h -p 20 -t $session "cd ~/tz/code;../dev;bash"
-    $cmd splitw -v -p 66 -t $session "cd ~/tz/code/d/autocomplete;./build;bash"
-    $cmd splitw -v -p 50 -t $session "cd ~/tz/code/py;./dev;bash"
+    $cmd new -d -n py -s $session "cd ~/tz/code;bash"
+    $cmd splitw -h -p 20 -t $session "source ~/.bash_profile;cd ~/tz/code/py;./dev;bash"
+    $cmd splitw -v -p 50 -t $session "cd ~/tz/code;../dev;bash"
+    $cmd new-window -n av 
+    $cmd splitw -h -p 20 -t $session "source ~/.bash_profile;cd ~/tz/code;./leancloud/av_run;bash"
+    $cmd selectw -t $session:0
     $cmd select-pane -L
-    $cmd selectw -t $session:1
 fi
-
-
 
 $cmd att -t $session
 
