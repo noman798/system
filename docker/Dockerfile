@@ -32,6 +32,7 @@ RUN apt-get clean;\
     apt-get update --fix-missing; \
     apt-get -y install \
     gettext \
+    borgbackup \
     ntpdate \
     realpath \
     sudo \
