@@ -1,5 +1,6 @@
-ROOT=/home/tzol
+VERSION=master-bcd02ab
 
+ROOT=/home/tzol
 PREFIX=$(cd "$(dirname "$0")"; pwd)
 
 mkdir -p $ROOT
@@ -16,7 +17,7 @@ mkdir -p var/log \
     tmp
 sudo chown -R 1000 $ROOT
 
-docker pull daocloud.io/zuroc/tz:master-bcd02ab
+docker pull daocloud.io/zuroc/tz:$VERSION
 
 docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/log:/var/log \
@@ -28,4 +29,4 @@ docker run -d -v $ROOT/home:/home \
     -v $ROOT/data:/data \
     --name tzol \
     -p 30000:22 -p 30001-30100:30001-30100 -p 8081-8082:30101-30102 -p 80:30103 -p 443:30104 \
-    daocloud.io/zuroc/tz
+    $VERSION
