@@ -47,7 +47,6 @@ docker run -d -v $ROOT/home:/home \
     -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 -p 80:80 -p 443:443 \
     tz/world
 
-
 IP=`docker-machine ip`
 echo "DOCKER IP = "$IP
 echo ""
