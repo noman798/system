@@ -33,13 +33,6 @@ eval "$(docker-machine env default)"
 
 DOCKER=$PREFIX/docker
 $DOCKER/build.sh
-echo "BUILDED !!!"
-
-
-
-
-
-
 
 echo "Try docker run ..."
 docker run -d -v $ROOT/home:/home \
