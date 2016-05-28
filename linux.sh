@@ -1,6 +1,6 @@
 ROOT=/data/tzonline
 
-PREFIX=$(cd "$(dirname "$0")"; pwd)/../..
+PREFIX=$(cd "$(dirname "$0")"; pwd)
 
 mkdir -p $ROOT
 rsync -avC $PREFIX/mnt/ $ROOT/
