@@ -12,7 +12,7 @@ rm -rf redis-stable
 
 sudo useradd redis
 sudo chown redis /var/lib/redis/
-mkdir -p /etc/redis
+sudo mkdir -p /etc/redis
 sudo cp $PREFIX/config/redis*.conf /etc/redis
 
 sudo ln -s $PREFIX/supervisord/redis*.conf /etc/supervisor/conf.d/
