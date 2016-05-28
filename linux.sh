@@ -1,11 +1,11 @@
-ROOT=/data/tzonline
+ROOT=/home/tzol
 
 PREFIX=$(cd "$(dirname "$0")"; pwd)
 
 mkdir -p $ROOT
 rsync -avC $PREFIX/mnt/ $ROOT/
 rsync -avC $ROOT/root/ $ROOT/home/dev/
-sudo cp ~/.ssh/* ~/docker/home/dev/.ssh/*
+sudo cp ~/.ssh/*  $ROOT/.ssh/*
 
 cd $ROOT
 mkdir -p var/log \
