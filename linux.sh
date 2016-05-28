@@ -18,7 +18,7 @@ mkdir -p var/log \
 sudo chown -R 1000 $ROOT
 
 docker pull daocloud.io/zuroc/tz:$VERSION
-
+echo "DOCKR RUN"
 docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
