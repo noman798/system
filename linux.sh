@@ -13,6 +13,7 @@ mkdir -p var/log \
     var/lib/redis \
     var/lib/mongodb \
     var/lib/mlocate \
+    var/log/supervisor \
     data \
     tmp
 sudo chown -R 1000 $ROOT
