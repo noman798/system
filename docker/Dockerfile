@@ -95,7 +95,7 @@ RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # changel npm to local source
 RUN npm config set strict-ssl false
-RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 # install frontend tools
 # RUN cnpm install -g \
