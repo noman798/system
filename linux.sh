@@ -18,7 +18,7 @@ mkdir -p var/log \
 sudo chown -R 1000 $ROOT
 
 docker pull daocloud.io/zuroc/tz:$VERSION
-echo "DOCKR RUN"
+echo "DOCKER RUN"
 docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
@@ -29,4 +29,4 @@ docker run -d -v $ROOT/home:/home \
     -v $ROOT/data:/data \
     --name tzol \
     -p 30000:22 -p 30001-30100:30001-30100 -p 8081-8082:30101-30102 -p 80:30103 -p 443:30104 \
-    $VERSION
+    daocloud.io/zuroc/tz:$VERSION
