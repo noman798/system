@@ -47,6 +47,7 @@ RUN apt-get clean;\
     dnsutils \
     unzip \
     build-essential \
+    cython \
     iputils-ping \
     clang \
     cmake \
