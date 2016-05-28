@@ -2,8 +2,6 @@ FROM ubuntu:xenial
 
 ENV DEBIAN_FRONTEND noninteractive
 
-
-
 COPY bin/* /usr/bin/
 
 # change timezone 
@@ -92,15 +90,14 @@ RUN apt-get clean;\
     libtidy-0.99-0 \
     xtail
 
-RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
-
-# changel npm to local source
-RUN npm config set strict-ssl false
-#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 # install frontend tools
 # RUN cnpm install -g \
-RUN npm install -g \
+#RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ; \
+        npm config set strict-ssl false ; \
+        npm install -g \
         js2coffee \
         base-x \
         body-parser \
