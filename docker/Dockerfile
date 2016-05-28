@@ -30,6 +30,7 @@ RUN apt-get clean;\
     apt-get update --fix-missing; \
     apt-get -y install \
     gettext \
+    python-pil \
     borgbackup \
     ntpdate \
     run-one \
