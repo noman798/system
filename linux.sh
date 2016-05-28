@@ -16,6 +16,7 @@ mkdir -p var/log \
     var/log/supervisor \
     data \
     tmp
+
 sudo chown -R 1000 $ROOT
 
 docker pull daocloud.io/zuroc/tz:$VERSION
