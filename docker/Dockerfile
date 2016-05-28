@@ -140,6 +140,7 @@ RUN npm install -g \
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim
 COPY vimrc /etc/vim/vimrc.local 
 RUN vim +PluginInstall +qall
+RUN echo "colorscheme solarized" >> /etc/vim/vimrc.local
 #ENV YCM_DIR /usr/share/vim/vimfiles/bundle/YouCompleteMe
 #WORKDIR $YCM_DIR
 #RUN ./install.sh --clang-completer
