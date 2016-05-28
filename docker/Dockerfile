@@ -34,6 +34,7 @@ RUN apt-get clean;\
     gettext \
     borgbackup \
     ntpdate \
+    run-one \
     realpath \
     sudo \
     dos2unix \
