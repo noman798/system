@@ -13,5 +13,6 @@
 rsyslogd
 cron
 supervisord
+ulimit -c 0
 /usr/sbin/sshd -f /etc/ssh/sshd_config -D
 exit 0
