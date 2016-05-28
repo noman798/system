@@ -142,8 +142,7 @@ RUN sed -i '/colorscheme/ i colorscheme solarized'  /etc/vim/vimrc.local
 
 RUN pip install --upgrade pip virtualenv trash-cli hg-git thefuck
 WORKDIR /home/dev
-RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/
-RUN gem install sass gist 
+RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/; gem install sass gist 
 
 
 USER root
