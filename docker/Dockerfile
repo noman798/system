@@ -135,14 +135,14 @@ RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ; \
 
 
 # install vim-plugin
-RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim
 COPY vimrc /etc/vim/vimrc.local 
-RUN vim +PluginInstall +qall
-RUN sed -i '/colorscheme/ i colorscheme solarized'  /etc/vim/vimrc.local 
 
-RUN pip install --upgrade pip virtualenv trash-cli hg-git thefuck
 WORKDIR /home/dev
-RUN gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/; gem install sass gist 
+RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim;\
+    vim +PluginInstall +qall;\
+    sed -i '/colorscheme/ i colorscheme solarized'  /etc/vim/vimrc.local ;\
+    pip install --upgrade pip virtualenv trash-cli hg-git thefuck ; \
+    gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/; gem install sass gist 
 
 
 USER root
