@@ -5,7 +5,7 @@ PREFIX=$(cd "$(dirname "$0")"; pwd)
 mkdir -p $ROOT
 rsync -avC $PREFIX/mnt/ $ROOT/
 rsync -avC $ROOT/root/ $ROOT/home/dev/
-sudo cp ~/.ssh/*  $ROOT/.ssh/*
+sudo cp ~/.ssh  $ROOT/
 
 cd $ROOT
 mkdir -p var/log \
