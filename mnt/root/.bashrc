@@ -1,15 +1,19 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 # If not running interactively, don't do anything
-case $- in
-    *i*) ;;
-      *) return;;
-esac
+
+if [ -f ~/.py3env/bin/activate ]; then
+    source ~/.py3env/bin/activate
+fi
 
 export EDITOR="/usr/bin/vim"
 export LC_CTYPE=zh_CN.UTF-8 # 可以輸入UTF-8中文
 export LC_MESSAGES=zh_CN.UTF-8 # 可以顯示UTF-8中文
 
+case $- in
+    *i*) ;;
+      *) return;;
+esac
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -38,9 +42,6 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-if [ -f ~/.py3env/bin/activate ]; then
-    source ~/.py3env/bin/activate
 fi
 export TERM='xterm-256color'
 export PS1="\[\e[32;1m\]\u \w \[\e[0m\]"
