@@ -35,6 +35,7 @@ sudo rm -rf /usr/share/elasticsearch/plugins/analysis-ik/config
 sudo ln -s /etc/elasticsearch/analysis-ik /usr/share/elasticsearch/plugins/analysis-ik/config
 
 
+rm /etc/supervisor/conf.d/elasticsearch.conf
 sudo ln -s $PREFIX/supervisord/elasticsearch.conf /etc/supervisor/conf.d/
 sudo supervisorctl reload 
 sudo supervisorctl restart all
