@@ -35,5 +35,6 @@ sudo rm -rf /usr/share/elasticsearch/plugins/analysis-ik/config
 sudo ln -s /etc/elasticsearch/analysis-ik /usr/share/elasticsearch/plugins/analysis-ik/config
 
 
-# sudo -u elasticsearch /usr/share/elasticsearch/bin/elasticsearch --default.path.home=/usr/share/elasticsearch --default.path.conf=/etc/elasticsearch
-
+sudo ln -s $PREFIX/supervisord/elasticsearch.conf /etc/supervisor/conf.d/
+sudo supervisorctl reload 
+sudo supervisorctl restart all
