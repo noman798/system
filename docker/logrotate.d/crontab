@@ -1,36 +1,53 @@
 /var/log/crontab/*.log {
 	daily
 	missingok
-	rotate 31
+	rotate 365
+    copytruncate
 	compress
 	delaycompress
 	notifempty
-	create 644 dev dev 
+	create 644 dev dev
+    compresscmd /usr/bin/xz
+    uncompresscmd /usr/bin/unxz
+    compressext .xz
+
 }
 /var/log/supervisor/*.log {
 	daily
+    copytruncate
 	missingok
-	rotate 31
+	rotate 365
 	compress
 	delaycompress
 	notifempty
 	create 644 dev dev 
+    compresscmd /usr/bin/xz
+    uncompresscmd /usr/bin/unxz
+    compressext .xz
 }
 /var/log/elasticsearch/*.log {
+    copytruncate
 	daily
 	missingok
-	rotate 31
+	rotate 365
 	compress
 	delaycompress
 	notifempty
 	create 644 elasticsearch elasticsearch
+    compresscmd /usr/bin/xz
+    uncompresscmd /usr/bin/unxz
+    compressext .xz
 }
 /var/log/mongodb/*.log {
+    copytruncate
 	daily
 	missingok
-	rotate 31
+	rotate 365
 	compress
 	delaycompress
 	notifempty
 	create 644 mongodb mongodb 
+    compresscmd /usr/bin/xz
+    uncompresscmd /usr/bin/unxz
+    compressext .xz
 }
