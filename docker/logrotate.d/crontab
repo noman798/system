@@ -6,5 +6,31 @@
 	delaycompress
 	notifempty
 	create 644 dev dev 
-	sharedscripts
+}
+/var/log/supervisor/*.log {
+	daily
+	missingok
+	rotate 31
+	compress
+	delaycompress
+	notifempty
+	create 644 dev dev 
+}
+/var/log/elasticsearch/*.log {
+	daily
+	missingok
+	rotate 31
+	compress
+	delaycompress
+	notifempty
+	create 644 elasticsearch elasticsearch
+}
+/var/log/mongodb/*.log {
+	daily
+	missingok
+	rotate 31
+	compress
+	delaycompress
+	notifempty
+	create 644 mongodb mongodb 
 }
