@@ -12,6 +12,8 @@
 # By default this script does nothing.
 rsyslogd
 cron
+mkdir -p $( dirname $(cat /etc/supervisord.conf  | grep logfile= | grep "\.log" | sed s/.*logfile=// ) )
+touch $( cat /etc/supervisord.conf  | grep logfile= | grep "\.log" | sed s/.*logfile=// )
 supervisord
 ulimit -c 0
 /usr/sbin/sshd -f /etc/ssh/sshd_config -D

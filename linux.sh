@@ -23,7 +23,8 @@ dao pull zuroc/tz:master-$VERSION
 
 echo "DOCKER RUN"
 
-docker run -d -v $ROOT/home:/home \
+docker run -d \
+    -v $ROOT/home:/home \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
     -v $ROOT/root:/root  \
@@ -31,6 +32,6 @@ docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
     -v $ROOT/data:/data \
-    --name u88 \
     -p 30000:22 -p 30001-30100:30001-30100 -p 30101-30102:8081-8082 -p 30103:80 -p 30104:443 \
+    --name u88 \
     daocloud.io/zuroc/tz:master-$VERSION
