@@ -14,6 +14,7 @@ DEL_LIST = [
     r'.*\.swp$',
     r'^__pycache__$',
     r'.*\.orig$',
+    r'.*\.po~$',
     r'^core\.\d+$',
     r'^nohup\.out$',
     r'^:w$',
