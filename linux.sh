@@ -1,6 +1,6 @@
 VERSION=e2ae6fe
 
-ROOT=/home/tzol
+ROOT=/mnt/data/u88
 PREFIX=$(cd "$(dirname "$0")"; pwd)
 
 mkdir -p $ROOT
