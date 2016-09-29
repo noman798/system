@@ -1,4 +1,4 @@
-VERSION=89179cb
+VERSION=1fd3869
 
 ROOT=/mnt/data/u88
 PREFIX=$(cd "$(dirname "$0")"; pwd)
