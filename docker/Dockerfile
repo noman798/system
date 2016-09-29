@@ -98,40 +98,85 @@ RUN apt-get clean;\
 
 RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ; \
         npm config set strict-ssl false ; \
-        npm install -g \
-        js2coffee \
-        base-x \
-        body-parser \
-        clean-css \
-        coffee-script \
-        cookie-parser \
-        coffeelint \
-        dateformat \
-        dynamic-dedupe \
-        ejs \
-        escape-html \
-        express \
-        fis3 \
-        fis3-postprocessor-autoprefixer \
-        fis3-postpackager-loader \
-        fis3-hook-commonjs \
-        hiredis \
-        html-minifier \
-        html-to-text \
-        ioredis \
-        leanengine \
-        marked \
-        node-dev \
-        node-uuid \
-        q \
-        qiniu \
-        redis-evalsha \
-        request \
-        rootpath \
-        to-markdown \
-        underscore \
-        underscore.string \
-        rubygems
+ npm install -g \
+async-module-loader \
+avalon2 \
+babel-core \
+babel-loader \
+babel-plugin-transform-runtime \
+babel-preset-es2015 \
+babel-runtime \
+base-x \
+bluebird \
+body-parser \
+bundle-loader \
+child_process \
+clean-css \
+co \
+coffee-loader \
+coffee-script \
+coffee-script \
+coffeelint \
+cookie-parser \
+css-loader \
+dateformat \
+dynamic-dedupe \
+ejs \
+escape-html \
+express \
+extract-text-webpack-plugin \
+file-loader \
+fis3 \
+fis3-hook-commonjs \
+fis3-postpackager-loader \
+fis3-postprocessor-autoprefixer \
+get-parameter-names \
+gulp-develop-server \
+hiredis \
+html-loader \
+html-minifier \
+html-minify-loader \
+html-to-text \
+html-webpack-plugin \
+image-webpack-loader \
+ioredis \
+jquery \
+js-yaml \
+js2coffee \
+jsonwebtoken \
+knex \
+lodash \
+lodash.clonedeep \
+marked \
+negotiator \
+node-dev \
+node-sass \
+node-uuid \
+optimize-css-assets-webpack-plugin \
+pg \
+pg-native \
+q \
+qiniu \
+raw-loader \
+reconnecting-websocket \
+redis-evalsha \
+request \
+rootpath \
+rubygems \
+sass-loader \
+scriptjs \
+slideout \
+slm-loader \
+store \
+style-loader \
+to-markdown \
+underscore \
+url-loader \
+uws \
+webpack \
+webpack-dev-server \
+websocket-extensions \
+underscore.string
 
 
 
