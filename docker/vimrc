@@ -36,7 +36,7 @@ Plugin 'luochen1990/rainbow'                "彩虹括号，匹配的括号显�
 Plugin 'rking/ag.vim'                       "ag插件
 Plugin 'scrooloose/nerdtree'                "文件浏览
 Plugin 'scrooloose/syntastic'               "语法检查
-Plugin 'tpope/vim-commentary'               "批量注释 
+Plugin 'tpope/vim-commentary'               "批量注释
 Plugin 'vim-scripts/ctags.vim'              "生成Tag，跟TagList搭配
 Plugin 'vim-scripts/mako.vim'               "mako语法高亮
 Plugin 'vim-scripts/taglist.vim'            "显示Tag
@@ -72,42 +72,42 @@ func RunPy2InPy3()
 endfunc
 "定义 RunSrc()
 func RunSrc()
-exec "w"
-"运行python
-if &filetype == 'py'||&filetype == 'python'
-    call RunPy2InPy3()
-endif
-"使用zen-codeing补全html
-if &filetype == 'html'
-    call emmet#expandAbbr(3,"")
-endif
-if &filetype == 'sh'
-    exec "!bash %"
-endif
+    exec "w"
+    "运行python
+    if &filetype == 'py'||&filetype == 'python'
+        call RunPy2InPy3()
+    endif
+    "使用zen-codeing补全html
+    if &filetype == 'html'
+        call emmet#expandAbbr(3,"")
+    endif
+    if &filetype == 'sh'
+        exec "!bash %"
+    endif
 endfunc
-"结束定义RunSrc  
+"结束定义RunSrc
 
 "定义FormartSrc()
 "需使用以下的格式化插件https://bitbucket.org/zuroc/42qu-linux-config
 func FormartSrc()
-exec "w"
-if &filetype == 'c'
-exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
-elseif &filetype == 'cpp' || &filetype == 'hpp'
-exec "r !astyle --style=ansi --one-line=keep-statements -a --suffix=none %>
-/dev/null 2>&1"
-elseif &filetype == 'perl'
-exec "!astyle --style=gnu --suffix=none %"
-elseif &filetype == 'py'||&filetype == 'python'
-exec "r !pydent % > /dev/null 2>&1"
-elseif &filetype == 'java'
-exec "!astyle --style=java --suffix=none %"
-elseif &filetype == 'jsp'
-exec "!astyle --style=gnu --suffix=none %"
-elseif &filetype == 'xml'
-exec "!astyle --style=gnu --suffix=none %"
-endif
-exec "e! %"
+    exec "w"
+    if &filetype == 'c'
+        exec "!astyle --style=ansi --one-line=keep-statements -a --suffix=none %"
+    elseif &filetype == 'cpp' || &filetype == 'hpp'
+        exec "r !astyle --style=ansi --one-line=keep-statements -a --suffix=none %>
+        /dev/null 2>&1"
+    elseif &filetype == 'perl'
+        exec "!astyle --style=gnu --suffix=none %"
+    elseif &filetype == 'py'||&filetype == 'python'
+        exec "r !pydent % > /dev/null 2>&1"
+    elseif &filetype == 'java'
+        exec "!astyle --style=java --suffix=none %"
+    elseif &filetype == 'jsp'
+        exec "!astyle --style=gnu --suffix=none %"
+    elseif &filetype == 'xml'
+        exec "!astyle --style=gnu --suffix=none %"
+    endif
+    exec "e! %"
 endfunc
 "结束定义FormartSrc
 
@@ -154,10 +154,10 @@ autocmd FileType python setlocal et sta sw=4 sts=4
 if filereadable("~/.vim/py.tlp ")
     autocmd BufNewFile *.py  0r  ~/.vim/py.tlp
 endif
-retab 
+retab
 
 """""""""""""""""""""""""""""""""""""""
-"            
+"
 "            ctrlp设置
 "
 """""""""""""""""""""""""""""""""""""""
@@ -198,7 +198,7 @@ nnoremap <C-w>E :SyntasticCheck<CR> :SyntasticToggleMode<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
-"        
+"
 "        Taglist and Ctags
 "
 """""""""""""""""""""""""""""""""""""""
@@ -215,13 +215,13 @@ set tags=tags;
 
 "设置F12快捷键 自动生成当前目录tags文件
 function! UpdateTagsFile()
-silent !ctags -R --fields=+ianS --extra=+q
+    silent !ctags -R --fields=+ianS --extra=+q
 endfunction
 
 
 """""""""""""""""""""""""""""""""""""""
-"               
-"               airline            
+"
+"               airline
 "
 """""""""""""""""""""""""""""""""""""""
 set laststatus=2
@@ -230,11 +230,11 @@ let g:airline#extensions#branch#enabled = 1
 let g:airline#extensions#syntastic#enabled = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:tmuxline_separators = {
-    \ 'left' : '',
-    \ 'left_alt': '>',
-    \ 'right' : '',
-    \ 'right_alt' : '<',
-    \ 'space' : ' '}
+            \ 'left' : '',
+            \ 'left_alt': '>',
+            \ 'right' : '',
+            \ 'right_alt' : '<',
+            \ 'space' : ' '}
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -287,7 +287,7 @@ let g:rainbow_active = 1    "彩虹括号
 
 """""""""""""""""""""""""""""""""""""""
 "
-"           解决长行文本变卡                
+"           解决长行文本变卡
 "
 """""""""""""""""""""""""""""""""""""""
 "set synmaxcol=128
@@ -296,12 +296,12 @@ set ttyscroll=3
 set lazyredraw
 """""""""""""""""""""""""""""""""""""""
 "
-"               快捷键                 
+"               快捷键
 "
 """""""""""""""""""""""""""""""""""""""
 "解决组合快捷键导致某些快捷键变卡的问题
 "例如如果map了np, 就会导致搜索n有一个很长的反应时间
-set timeoutlen=200 
+set timeoutlen=200
 map <F12> :call RunSrc()<CR>
 map <F10> :SyntasticCheck pyflakes<CR>
 map <F9> :SyntasticCheck python<CR>
@@ -313,8 +313,8 @@ map <F4> :call FormartSrc()<CR>
 map <F3> :set paste<CR>
 map <F2> :set nopaste<CR>
 "ag搜索
-nmap <C-S>f :CtrlSF  
-nmap <C-S>o :CtrlSFOpen<CR> 
+nmap <C-S>f :CtrlSF
+nmap <C-S>o :CtrlSFOpen<CR>
 nmap ss :CtrlSF <C-R><C-W><CR>
 vnoremap ss y:CtrlSF <C-R>"<CR>
 vnoremap <C-Tab> :Tabularize <C-R><C-W><CR>
@@ -327,11 +327,11 @@ nmap bn :bn<cr>
 nmap bp :bp<cr>
 nmap ne :lnext<cr>
 nmap pe :lprev<cr>
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.py :%s/\t/    /e
-autocmd BufWritePre *.coffee :%s/\s\+$//e
-autocmd BufWritePre *.coffee :%s/\t/    /e
-autocmd BufWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre *.js :%s/\s\+$//e
+" autocmd BufWritePre *.py :%s/\s\+$//e
+" autocmd BufWritePre *.py :%s/\t/    /e
+" autocmd BufWritePre *.coffee :%s/\s\+$//e
+" autocmd BufWritePre *.coffee :%s/\t/    /e
+" autocmd BufWritePre *.scss :%s/\s\+$//e
+" autocmd BufWritePre *.js :%s/\s\+$//e
 au BufWrite * :Autoformat
 
