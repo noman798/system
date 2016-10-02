@@ -1,6 +1,6 @@
 VERSION=0b66a99
 
-ROOT=/mnt/data/u88
+ROOT=/Users/zhangchenpeng/docker
 PREFIX=$(cd "$(dirname "$0")"; pwd)
 
 mkdir -p $ROOT
