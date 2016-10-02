@@ -30,7 +30,7 @@ RUN apt-get clean;\
 apt-get update --fix-missing; \
 apt-get -y install \
 postgresql postgresql-contrib postgresql-server-dev-all \
-clang-format \
+clang-format timelimit \
 gettext \
 python-pil \
 borgbackup \
