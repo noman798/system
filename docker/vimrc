@@ -327,7 +327,8 @@ nmap bn :bn<cr>
 nmap bp :bp<cr>
 nmap ne :lnext<cr>
 nmap pe :lprev<cr>
-" autocmd BufWritePre *.py :%s/\s\+$//e
+
+autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
 " autocmd BufWritePre *.py :%s/\t/    /e
 " autocmd BufWritePre *.coffee :%s/\s\+$//e
 " autocmd BufWritePre *.coffee :%s/\t/    /e
