@@ -30,6 +30,7 @@ RUN apt-get clean;\
 apt-get update --fix-missing; \
 apt-get -y install \
 postgresql postgresql-contrib postgresql-server-dev-all \
+clang-format \
 gettext \
 python-pil \
 borgbackup \
@@ -82,7 +83,7 @@ python-dev \
 python-pip \
 python3.5 \
 python3.5-dev \
-vim \
+    vim \
     rubygems \
     silversearcher-ag \
     tmux \
