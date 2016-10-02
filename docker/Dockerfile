@@ -186,9 +186,9 @@ COPY vimrc /etc/vim/vimrc.local
 
 WORKDIR /home/dev
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim;\
+    pip install --upgrade pip virtualenv trash-cli hg-git thefuck autopep8 flake8; \
     vim +PluginInstall +qall;\
     sed -i '/colorscheme/ i colorscheme solarized'  /etc/vim/vimrc.local ;\
-    pip install --upgrade pip virtualenv trash-cli hg-git thefuck autopep8 flake8; \
     gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/; gem install sass gist ;\
     pip3 install mako
 

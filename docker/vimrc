@@ -10,7 +10,7 @@ filetype off                  " required
 
 set rtp+=/usr/share/vim/vimfiles/bundle/Vundle.vim
 call vundle#rc('/usr/share/vim/vimfiles/bundle')
-
+Plugin 'Chiel92/vim-autoformat'
 Plugin 'gmarik/Vundle.vim'                  "插件管理
 " Plugin 'Valloric/YouCompleteMe'             "自动补全
 " Plugin 'Yggdroot/indentLine'                "垂直缩进对齐线
@@ -36,13 +36,13 @@ Plugin 'luochen1990/rainbow'                "彩虹括号，匹配的括号显�
 Plugin 'rking/ag.vim'                       "ag插件
 Plugin 'scrooloose/nerdtree'                "文件浏览
 Plugin 'scrooloose/syntastic'               "语法检查
-Plugin 'tell-k/vim-autopep8'                  "自动格式化
 Plugin 'tpope/vim-commentary'               "批量注释 
 Plugin 'vim-scripts/ctags.vim'              "生成Tag，跟TagList搭配
 Plugin 'vim-scripts/mako.vim'               "mako语法高亮
 Plugin 'vim-scripts/taglist.vim'            "显示Tag
 Plugin 'wavded/vim-stylus'                  "plim
 Plugin 'yegappan/mru'                       "最近打开过的文件
+Plugin 'tell-k/vim-autopep8'                  "自动格式化
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -263,6 +263,7 @@ let g:autopep8_disable_show_diff=1
 "
 """""""""""""""""""""""""""""""""""""""
 
+colorscheme solarized
 "colorscheme
 set t_Co=256
 let g:solarized_termcolors=256
@@ -302,8 +303,6 @@ set lazyredraw
 "例如如果map了np, 就会导致搜索n有一个很长的反应时间
 set timeoutlen=200 
 map <F12> :call RunSrc()<CR>
-map <C-F11> :call Autopep8()<CR>
-map <F11> :call Autopep8()<CR>
 map <F10> :SyntasticCheck pyflakes<CR>
 map <F9> :SyntasticCheck python<CR>
 map <F8> :res-1<CR>
@@ -334,3 +333,5 @@ autocmd BufWritePre *.coffee :%s/\s\+$//e
 autocmd BufWritePre *.coffee :%s/\t/    /e
 autocmd BufWritePre *.scss :%s/\s\+$//e
 autocmd BufWritePre *.js :%s/\s\+$//e
+au BufWrite * :Autoformat
+
