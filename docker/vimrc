@@ -334,5 +334,5 @@ autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
 " autocmd BufWritePre *.coffee :%s/\t/    /e
 " autocmd BufWritePre *.scss :%s/\s\+$//e
 " autocmd BufWritePre *.js :%s/\s\+$//e
-au BufWrite * :Autoformat
+au BufWrite *.py,*.html,*.coffee,*.js,*.scss,*.css :Autoformat
 
