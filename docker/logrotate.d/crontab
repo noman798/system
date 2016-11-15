@@ -2,7 +2,6 @@
 	daily
 	missingok
 	rotate 365
-    copytruncate
 	compress
 	delaycompress
 	notifempty
