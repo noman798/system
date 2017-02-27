@@ -99,6 +99,8 @@ RUN apt-get clean;\
 
 RUN echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ; \
         npm config set strict-ssl false ; \
+npm install -g n;\
+n stable;\
 npm install -g \
 async-module-loader \
 avalon2 \
