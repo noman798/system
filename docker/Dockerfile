@@ -31,6 +31,7 @@ RUN apt-get clean;\
     apt-get -y install \
     postgresql postgresql-contrib postgresql-server-dev-all \
     gettext \
+    mathjs \
     python-pil \
     borgbackup \
     ntpdate \
