@@ -138,6 +138,7 @@ xtail
         fis3-postprocessor-autoprefixer \
         get-parameter-names \
         gulp-develop-server \
+        gulp \
         hiredis \
         html-loader \
         html-minifier \
