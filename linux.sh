@@ -35,6 +35,6 @@ docker run -d \
     -v $ROOT/db:/db \
     -p 30000:22 -p 30001-30100:30001-30100 -p 30101-30102:8081-8082 -p 30103:80 -p 30104:443 \
     --name xo \
-    --restart=always \
      --restart=always \
+    --link postfix:postfix \
     daocloud.io/zuroc/tz:master-$VERSION

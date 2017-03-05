@@ -8,6 +8,7 @@ COPY bin/* /usr/bin/
 
 COPY resolv.conf /etc/resolv.conf
 
+
 RUN \
 mkdir -p /var/run/sshd;\
 locale-gen zh_CN.UTF-8;\
@@ -23,6 +24,7 @@ set -x \
 software-properties-common \
 curl; \
 curl --silent --location https://deb.nodesource.com/setup_4.x | bash - ;\
+add-apt-repository ppa:jonathonf/python-3.6 -y \
 add-apt-repository ppa:fkrull/deadsnakes -y ; \
 apt-get dist-upgrade -y
 
@@ -81,17 +83,17 @@ openssh-server \
 perl \
 python-dev \
 python-pip \
-python3.5 \
-python3.5-dev \
-    vim \
-    rubygems \
-    silversearcher-ag \
-    tmux \
-    rpl \
-    tree \
-    rubygems-integration \
-    libtidy-0.99-0 \
-    xtail
+python3.6 \
+python3.6-dev \
+vim \
+rubygems \
+silversearcher-ag \
+tmux \
+rpl \
+tree \
+rubygems-integration \
+libtidy-0.99-0 \
+xtail
 
 
 # install frontend tools
