@@ -35,6 +35,8 @@ DOCKER=$PREFIX/docker
 $DOCKER/build.sh
 
 echo "Try docker run ..."
+dao pull catatnight/postfix
+docker run -e maildomain=mail.xtco2o.com -e smtp_user=macxuser:x51ymmux --name postfix -d catatnight/postfix 
 docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/log:/var/log \
     -v $ROOT/tmp:/tmp  \
@@ -43,6 +45,7 @@ docker run -d -v $ROOT/home:/home \
     -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
     -v $ROOT/data:/data \
+    --link postfix:postfix \
     --name tz \
     -p 20000:22 -p 20001-20100:20001-20100 -p 8081-8082:8081-8082 -p 80:80 -p 443:443 \
     tz/world
