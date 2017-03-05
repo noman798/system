@@ -24,7 +24,7 @@ set -x \
 software-properties-common \
 curl; \
 curl --silent --location https://deb.nodesource.com/setup_4.x | bash - ;\
-add-apt-repository ppa:jonathonf/python-3.6 -y \
+add-apt-repository ppa:jonathonf/python-3.6 -y ;\
 add-apt-repository ppa:fkrull/deadsnakes -y ; \
 apt-get dist-upgrade -y
 
