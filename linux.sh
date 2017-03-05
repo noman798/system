@@ -1,7 +1,7 @@
 VERSION=0b66a99
 
-ROOT=/Users/zhangchenpeng/docker
 PREFIX=$(cd "$(dirname "$0")"; pwd)
+ROOT=/Users/zhangchenpeng/docker
 
 mkdir -p $ROOT
 rsync -avC $PREFIX/mnt/ $ROOT/
