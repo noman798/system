@@ -1,2 +1,2 @@
 hg bookmark -f master
-hg push
+hg push git
