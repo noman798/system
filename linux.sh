@@ -32,7 +32,9 @@ docker run -d \
     -v $ROOT/var/lib/mongodb:/var/lib/mongodb \
     -v $ROOT/var/lib/mlocate:/var/lib/mlocate \
     -v $ROOT/data:/data \
+    -v $ROOT/db:/db \
     -p 30000:22 -p 30001-30100:30001-30100 -p 30101-30102:8081-8082 -p 30103:80 -p 30104:443 \
-    --name u88 \
+    --name xo \
     --restart=always \
+     --restart=always \
     daocloud.io/zuroc/tz:master-$VERSION
