@@ -35,6 +35,7 @@ postgresql postgresql-contrib postgresql-server-dev-all \
 clang-format timelimit \
 gettext \
 net-tools \
+netcat \
 borgbackup \
 ntpdate \
 run-one \
