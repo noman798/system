@@ -1,2 +1,4 @@
+hg ci -m f
+hg fe
 hg bookmark -f master
 hg push git
