@@ -34,7 +34,7 @@ apt-get -y install \
 postgresql postgresql-contrib postgresql-server-dev-all \
 clang-format timelimit \
 gettext \
-python-pil \
+net-tools \
 borgbackup \
 ntpdate \
 run-one \
