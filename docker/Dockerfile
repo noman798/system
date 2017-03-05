@@ -190,11 +190,11 @@ xtail
 
         WORKDIR /home/dev
         RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim;\
-            pip install --upgrade pip virtualenv trash-cli hg-git thefuck autopep8 flake8 yapf;\
+            python3.6 -m pip install --upgrade pip setuptools wheel; \
+            pip3 install --upgrade pip virtualenv trash-cli hg-git thefuck autopep8 flake8 yapf mako;\
             vim +PluginInstall +qall;\
             sed -i '/colorscheme/ i colorscheme solarized'  /etc/vim/vimrc.local ;\
-            gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/; gem install sass gist ;\
-            pip3 install mako
+            gem sources --add https://ruby.taobao.org/ --remove https://rubygems.org/; gem install sass gist ;
 
             USER root
             COPY fix_print.py /usr/lib/python3.5/lib2to3/fixes/fix_print.py
